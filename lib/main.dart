@@ -25,6 +25,13 @@ class _DicePageState extends State<DicePage> {
   int leftDieNo = 1;
   int rightDieNo = 1;
 
+  void updateNo() {
+    setState(() {
+      leftDieNo = Random().nextInt(6) + 1;
+      rightDieNo = Random().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -33,20 +40,14 @@ class _DicePageState extends State<DicePage> {
           Expanded(
               child: FlatButton(
             onPressed: () {
-              setState(() {
-                leftDieNo = Random().nextInt(6) + 1;
-                rightDieNo = Random().nextInt(6) + 1;
-              });
+              updateNo();
             },
             child: Image.asset('images/dice$leftDieNo.png'),
           )),
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  leftDieNo = Random().nextInt(6) + 1;
-                  rightDieNo = Random().nextInt(6) + 1;
-                });
+                updateNo();
               },
               child: Image.asset('images/dice$rightDieNo.png'),
             ),
