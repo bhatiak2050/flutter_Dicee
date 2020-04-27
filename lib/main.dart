@@ -16,11 +16,15 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
+
+  int leftDieNo = 1;
+  int rightDieNo = 5;
+
   @override
   Widget build(BuildContext context) {
 
-    int leftDieNo = 1;
-    int rightDieNo = 5;
+    leftDieNo = 2;
+    rightDieNo = 3;
 
     return Center(
       child: Row(
