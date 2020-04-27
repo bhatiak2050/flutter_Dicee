@@ -26,23 +26,24 @@ class _DicePageState extends State<DicePage> {
 
   @override
   Widget build(BuildContext context) {
-    leftDieNo = 1;
-    rightDieNo = 1;
-
     return Center(
       child: Row(
         children: <Widget>[
           Expanded(
               child: FlatButton(
             onPressed: () {
-              print("Left button pressed");
+              setState(() {
+                leftDieNo = 5;
+              });
             },
             child: Image.asset('images/dice$leftDieNo.png'),
           )),
           Expanded(
             child: FlatButton(
               onPressed: () {
-                print("Right button pressed");
+                setState(() {
+                  rightDieNo = 3;
+                });
               },
               child: Image.asset('images/dice$rightDieNo.png'),
             ),
